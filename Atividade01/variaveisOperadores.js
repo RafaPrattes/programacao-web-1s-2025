@@ -1,21 +1,18 @@
-var numA = 10
-var numB = 2
-var result = numA + numB
+let numA = 10
+let numB = 50
 
-var numC = 555
-var numD = 10
-var result2 = numC - numD
+let soma = numA + numB
 
-console.log(``)
+console.log(`O resultado da entre numA e numB é ${soma}.`)
 
-var numE = 100
-var numF = 20
-var result3 = numE * numF
+let subtracao = numA - numB
 
-console.log(`O resultado da multiplicação é ${result3}`)
+console.log(`O resultado da subtração entre numA e numB é ${subtracao}`)
 
-var numG = 50
-var numH = 2
-var result4 = numG / numH
+let multiplicacao = numA * numB
 
-console.log(`O resultado é ${result4}`)
+console.log(`O reultado da multiplicação entre numA e numB é ${multiplicacao}`)
+
+let divisao = numA / numB
+
+console.log(`O resultado da divisão entre numA e numB é ${divisao}`)
