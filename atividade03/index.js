@@ -12,7 +12,7 @@ app.get('/somar/:a/:b', (req, res)=>{
 //Number.parseFloat= é um método que faz a conversão de string para número
     const a = Number.parseFloat(req.params.a)
     const b = Number.parseFloat(req.params.b)
-//foi necessário criar as variaveis para poder usar o req e referenciar
+//foi necessário criar as variaveis a, b e result para poder usar o req e referenciar
     const result = a + b
     res.send(`O resultado da soma entre ${a} e ${b} é: ${result}\n`)
 })
@@ -40,7 +40,7 @@ app.get('/dividir/:a/:b', (req, res)=>{
     if (b === 0) {
         return res.send("Erro: não é possível dividir por zero.\n")
     }
-    
+
     const result = a / b
     res.send(`O resultado da divisão entre ${a} e ${b} é: ${result}\n`)
 })
