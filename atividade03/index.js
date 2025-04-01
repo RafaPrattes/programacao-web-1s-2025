@@ -10,7 +10,6 @@ const app = express()
 app.get('/', (req, res)=>{
     let html = '<h1>Calculadora</h1>'
     html += '<h3>Rotas disponíveis:</h3>'
-    html += '<p>Rotas disponíveis:</p>'
     html += '<p>/somar/:a/:b <a href="/somar/1/2">testar</a></p>'
     html += '<p>/subtrair/:a/:b <a href="/subtrair/1/2">testar</a></p>'
     html += '<p>/multiplicar/:a/:b <a href="/multiplicar/1/2">testar</a></p>'
