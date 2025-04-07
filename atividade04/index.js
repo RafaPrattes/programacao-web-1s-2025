@@ -12,52 +12,49 @@ const app = express()
 
 app.get('/', (req, res)=>{
     let html = '<h1>Estoque</h1>'
-
-
     res.send(html)
 })
 
-app.get('/somar/:a/:b', (req, res)=>{
+app.get('/adicionar/:id/:nome/:qtd', (req, res)=>{
 //Number.parseFloat= é um método que faz a conversão de string para número
-    const a = Number.parseFloat(req.params.a)
-    const b = Number.parseFloat(req.params.b)
-//foi necessário criar as variaveis a, b e result para poder usar o req e referenciar
-    const result = a + b
-    res.send(`O resultado da soma entre ${a} e ${b} é: ${result}\n`)
+    let id = Number.parseFloat(req.params.id)
+    let nome = (req.params.nome)
+    let qtd = (req.params.qtd)
+
+    res.send(`${qtd} produto(s) com o id ${id} e nome ${nome} fora(m) adicionado(s) com sucesso!\n`)
 })
 
-app.get('/subtrair/:a/:b', (req, res)=>{
-    const a = Number.parseFloat(req.params.a)
-    const b = Number.parseFloat(req.params.b)
-
-    const result = a - b
-    res.send(`O resultado da subtração entre ${a} e ${b} é: ${result}\n`)
-    //outra forma de concatenar:
-    //res.send(`${a} - ${b} = ${calc.subtrair(a,b)}`)
-})
-
-app.get('/multiplicar/:a/:b', (req, res)=>{
-    const a = Number.parseFloat(req.params.a)
-    const b = Number.parseFloat(req.params.b)
-
-    const result = a * b
-    res.send(`O resultado da multiplicação entre ${a} e ${b} é: ${result}\n`)
-})
-
-app.get('/dividir/:a/:b', (req, res)=>{
-    const a = Number.parseFloat(req.params.a)
-    const b = Number.parseFloat(req.params.b)
-
-    if (b === 0) {
-        return res.send("<h1>Erro: não é possível dividir por zero.\n<h1>")
+app.get('/listar', (req, res)=>{
+    const produtos = (req.params.produtos)
+    if (produtos.length){
+        console.log('Não há produtos em estoque!')
+    } else {
+        console.log(`${produtos}`)
     }
+    res.send(`Os produtos em estoque são: ${produtos} \n`)
 
-    const result = a / b
-    res.send(`O resultado da divisão entre ${a} e ${b} é: ${result}\n`)
 })
 
-//Declara a porta 8080
-const PORT = 8080
+app.get('/remover/:id', (req, res)=>{
+    const id = Number.parseFloat(req.params.id)
+
+    res.send(`O produto de id número: ${id} foi removido com sucesso\n`)
+})
+
+app.get('/editar/:id/:qtd', (req, res)=>{
+    const id = Number(req.params.id)
+    const qtd = Number(req.params.qtd)
+
+    res.send('Digite o id do produto a ser editado: ')
+})
+
+//Declara a porta 8081
+const PORT = 8081
 
 app.listen(PORT, ()=>{
     console.log(`App rodando na porta correta ${PORT}`)})
+
+
+
+
+
