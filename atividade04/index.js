@@ -54,8 +54,13 @@ app.get('/listar', (req, res)=>{
 
 app.get('/remover/:id', (req, res)=>{
     let id = Number(req.params.id)
+    let sucesso = estoque.remover(id)
 
-    res.send(`O produto de id número: ${id} foi removido com sucesso!\n`)
+    if (sucesso) {
+        res.send(`O produto de id número: ${id} foi removido com sucesso!\n`)
+    } else {
+        res.send(`Erro: Produto com id ${id} não encontrado.`)
+    }
 })
 
 app.get('/editar/:id/:qtd', (req, res)=>{
@@ -72,8 +77,3 @@ const PORT = 8081
 //A aplicação web fica escutando as requisições em determinada porta
 app.listen(PORT, ()=>{
     console.log(`App rodando na porta correta ${PORT}`)})
-
-
-
-
-
