@@ -2,7 +2,9 @@
 //Evidência de ausência não prova ausência de evidência (não há como provar nada)
 
 /**
- * 1° - Para ser uma aplicação web deve ser inicializado o Express (framework para Node)
+ * npm init -y = inicia o projeto Node
+ * 
+ * 1° - Para ser uma aplicação web deve ser inicializado o Express (framework para Node) = npm install express
  * 
  * 2° - NPM é o gerenciador de pacotes Node, é usado para inicializar os pacotes necessários para a aplicação
  * 
@@ -16,7 +18,7 @@
  * 
  * 7° - Comando -> node index.js inicia a aplicação e a porta começa a escutar as requisições
  * 
- * 8° - 
+ * 8° - Não esquecer de instalar o mustache-express = npm install mustache-express
  */
 
 
